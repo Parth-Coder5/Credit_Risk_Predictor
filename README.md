@@ -1,59 +1,86 @@
-# Credit Risk Predictor
+# 🚀 Credit Risk Predictor (Machine Learning + Streamlit)
 
-An end-to-end Machine Learning project to predict credit risk (good/bad customers) using Logistic Regression with a complete preprocessing and modeling pipeline.
+An end-to-end **Credit Risk Prediction System** that classifies loan applicants as **Low Risk** or **High Risk** using Machine Learning and a business-aware decision threshold.
 
-## 🔍 Problem Statement
-Credit risk assessment is a critical task in the financial industry. The goal of this project is to predict whether a loan applicant is a **high-risk** or **low-risk** customer based on financial and personal attributes.
-
-## 📊 Dataset
-- German Credit Risk Dataset (UCI Machine Learning Repository)
-- 1000 records with mixed numerical and categorical features
-
-## ⚙️ Features Used
-- Age
-- Sex
-- Job
-- Housing
-- Saving accounts
-- Checking account
-- Credit amount
-- Loan duration
-- Purpose
-
-## 🧠 Model
-- Logistic Regression
-- Full preprocessing + model pipeline using `scikit-learn`
-- Threshold tuning to handle class imbalance
-
-## 📈 Evaluation Metrics
-- Accuracy
-- Precision, Recall, F1-score
-- ROC-AUC
-- Confusion Matrix
-- Business-focused threshold optimization
-
-## 🚀 Key Highlights
-- End-to-end ML workflow
-- Pipeline-based training (production-ready)
-- Threshold tuning for high-risk recall
-- Saved model for deployment
-
-## 🛠 Tech Stack
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib / Seaborn
-
-## 📦 Saved Artifacts
-- `credit_risk_pipeline.pkl`
-- `threshold.pkl`
-- `feature_columns.pkl`
-
-## 📌 Future Work
-- Streamlit web application
-- Model comparison (XGBoost, LightGBM)
-- Deployment to cloud
 ---
 
-⭐ If you find this project useful, consider starring the repo!
+## 📌 Project Overview
+
+Banks and financial institutions must minimize **false negatives** (high-risk customers wrongly approved).  
+This project focuses on **probability-based decision making** rather than raw accuracy.
+
+The system predicts:
+- 📉 **Risk Probability**
+- ⚖️ **Decision using tuned threshold**
+- ✅ Final classification: **Low Risk / High Risk**
+
+---
+
+## 🧠 Machine Learning Approach
+
+- **Model**: Logistic Regression  
+- **Pipeline**:  
+  - Missing value handling  
+  - One-Hot Encoding  
+  - Feature scaling  
+  - Classification  
+- **Threshold Tuning**:  
+  - Default: `0.5`
+  - Final: `0.4` (chosen to improve high-risk recall)
+
+---
+
+## 🧪 Model Performance (Test Set)
+
+| Metric | Value |
+|------|------|
+| ROC-AUC | ~0.66 |
+| High-Risk Recall | **92%** |
+| Accuracy | ~62% |
+
+> ⚠️ Accuracy drops after threshold tuning — **this is expected and acceptable** in credit risk problems.
+
+---
+
+## 🖥️ Web Application (Streamlit)
+
+### Features:
+- Interactive UI for applicant details
+- Real-time risk probability
+- Business-driven decision explanation
+- Clean, modern interface
+
+📸 **Preview:**
+![App Screenshot](./screenshots/app_preview.png)
+
+---
+
+## 🧰 Tech Stack
+
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- Streamlit
+- Joblib
+- Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+Credit_Risk_Predictor/
+├── app.py
+├── requirements.txt
+├── README.md
+├── Data/
+├── Model/
+└── Notebooks/
+
+
+---
+
+## ▶️ How to Run Locally
+
+```bash
+pip install -r requirements.txt
+python -m streamlit run app.py
