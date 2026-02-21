@@ -51,7 +51,7 @@ The system predicts:
 - Clean, modern interface
 
 📸 **Preview:**
-![App Screenshot](./screenshots/app_preview.png)
+![App Screenshot](https://github.com/Parth-Coder5/Credit_Risk_Predictor/blob/main/App%20Screenshot.png)
 
 ---
 
